@@ -1,0 +1,107 @@
+‹?xml version="1.0" encoding="utf-8" ?> {androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns: app="http://schemas.android.com/apk/res-auto" xmIns: tools="http://schemas.android.com/tools" android:layout_width="match_parent" android: layout_height="match_parent" tools:context="MainActivity" > 9S EZ工 < TextView android: layout_width="wrap_content" android: layout_height="wrap_content" android:text="Hello World!" app:layout_constraintBottom_toBottomOf="parent" app: layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightof="parent" app: layout_constraintTop_toTopOf="parent" / ›
+<?xml version="l. 0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="16dp">
+CTextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Hello Android!" />
+</RelativeLayout>
+<?xml version="l.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/and roid"
+xmlns:tools="http://schemas.android.com/tools*'
+android:id="@+id/activity_main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="16dp">
+
+<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Hello Android!" />
+</RelativeLayout>
+<?xml version»"1.0" encoding=”utf-8"?>
+<LinearLayout
+xmlns: android="http://schemas.android.ccm/apk/res/android“
+android:layout_width="match_parent"
+android: layout_height="match_parent"
+android:orientation="horizontal" >
+</LinearLayout>
+<?xml version»"1.0" encoding=”utf-8"?>
+<LinearLayout
+xmlns: android="http://schemas.android.ccm/apk/res/android“
+android:layout_width="match_parent"
+android: layout_height="match_parent"
+android:orientation="horizontal" >
+</LinearLayout>
+<?xml version="l.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/andro id"
+android:layout—width="match_parent"
+android:layout—height="match_parent"
+android:orientation="horizontal" >
+<EditText android:id="@+id/edit_message"
+android:layout—width="wrap_content"
+android:layout_height="wrap_content"
+android:layout—weight="1"
+android:hint="Въведете съобщение" />
+<Button
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:text="Изпращане" /> .
+</LinearLay out>
+<?xml version-'1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" 
+android:Iayout_height="match_parent" 
+android:orientation="horizontal" >
+<EditText android: id="@+id/edit_message" 
+android:layout width-'wrapcontent" 
+android:layout_height-'wrapcontent" 
+android:layout_weight="l" 
+android:hint="Въведете съобщение" />
+<Button 
+android:layout_width-'wrap_content" 
+android:layout_height="wrap_content" 
+android:onClick="sendMessage" android:text="Изпращане" />
+</LinearLayout>
+package com.example.*****.helloapplication;
+import android.content.Intent;
+import android.support. v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View; 
+import android.widget.EditText; 
+public class MainActivity extends AppCompatActivity {
+public final static String EXTRA_MESSAGE = "EXTRA_MESSAGE" ;
+@Override
+protected void onCreate(Bundle savedlnstanceState) { 
+super.onCreate(savedlnstanceState) ; 
+setcontentview(R.layout.activity_main);
+)
+EditText editText = (EditText)
+findViewByld(R.id.edit_message) ;
+String message = editText.getText().toString();
+}
+}sendMessage():
+public void sendMessage(View view) {
+)
+Intent intent = new Intent(this, DisplayMessageActivity.class);package com.example.****.helloapplication;
+import android.content.Intent;
+import android.support. v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.Textview;
+public class DisplayMessageActivity extends AppCompatActivity {
+@Override
+protected void onCreate(Bundle savedlnstanceSta te) 
+{
+super.onCreate(savedlnstanceState);
+Intent intent = getlntentO;
+String message =
+intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+Textview textview = new Textview(this); textView.setTextSize(40);
